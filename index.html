@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Micael | My Strategic Journey</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap");
+
+    :root{
+      --bg:#040812;
+      --bg2:#071120;
+      --panel:rgba(11,20,35,.78);
+      --panel-strong:rgba(16, 26, 44, 0.9);
+      --line:rgba(90,210,255,.15);
+      --cyan:#48e6ff;
+      --blue:#6282ff;
+      --violet:#9f63ff;
+      --pink:#ff58c5;
+      --lime:#bfff63;
+      --red:#ff617d;
+      --orange:#ff9d4d;
+      --text:#f4f8ff;
+      --muted:#9ab0c9;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --display:"Archivo Black", sans-serif;
+      --body:"Inter", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--body);
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(72,230,255,.13), transparent 25%),
+        radial-gradient(circle at 85% 18%, rgba(159,99,255,.14), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(255,88,197,.08), transparent 35%),
+        linear-gradient(140deg, #030710, #07111f 55%, #050912);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom, transparent, rgba(0,0,0,.9) 8%, rgba(0,0,0,.9) 92%, transparent);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .stars, .stars2 {
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      background-repeat:repeat;
+      animation: drift 90s linear infinite;
+      opacity:.45;
+    }
+
+    .stars{
+      background-image:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,.95) 0 1px, transparent 2px),
+        radial-gradient(circle at 48% 70%, rgba(255,255,255,.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 15%, rgba(72,230,255,.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 52%, rgba(255,255,255,.6) 0 1px, transparent 2px),
+        radial-gradient(circle at 25% 85%, rgba(159,99,255,.85) 0 1px, transparent 2px);
+      background-size:320px 320px;
+    }
+
+    .stars2{
+      background-image:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,.55) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 66%, rgba(255,255,255,.55) 0 1px, transparent 2px),
+        radial-gradient(circle at 55% 8%, rgba(255,88,197,.65) 0 1px, transparent 2px),
+        radial-gradient(circle at 12% 73%, rgba(191,255,99,.65) 0 1px, transparent 2px);
+      background-size:460px 460px;
+      animation-duration:130s;
+      opacity:.28;
+    }
+
+    @keyframes drift{
+      from{transform:translateY(0)}
+      to{transform:translateY(-120px)}
+    }
+
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:100;
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:0 24px;
+      background:linear-gradient(to bottom, rgba(3,8,15,.96), rgba(3,8,15,.55), transparent);
+      backdrop-filter:blur(10px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .brand-mark{
+      width:42px;height:42px;
+      display:grid;place-items:center;
+      border:1px solid rgba(72,230,255,.55);
+      color:var(--cyan);
+      font-family:var(--display);
+      font-size:.8rem;
+      background:linear-gradient(145deg, rgba(72,230,255,.15), rgba(159,99,255,.10));
+      box-shadow:0 0 20px rgba(72,230,255,.12);
+      clip-path:polygon(12% 0,100% 0,100% 76%,76% 100%,0 100%,0 12%);
+    }
+
+    .brand-copy{display:flex;flex-direction:column}
+    .brand-copy strong{font-size:.83rem;letter-spacing:.16em}
+    .brand-copy small{font-size:.57rem;letter-spacing:.18em;color:var(--muted)}
+
+    .nav{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .nav a{
+      color:#89a0b6;
+      text-decoration:none;
+      font-size:.69rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      position:relative;
+    }
+
+    .nav a:hover{color:var(--text)}
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0; right:100%; bottom:-8px;
+      height:2px;
+      background:var(--cyan);
+      transition:right .25s ease;
+    }
+    .nav a:hover::after{right:0}
+
+    .cta{
+      padding:10px 14px;
+      border:1px solid rgba(72,230,255,.28);
+      background:rgba(12,21,37,.55);
+      color:var(--text);
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-decoration:none;
+    }
+
+    main{position:relative; z-index:2}
+
+    section{
+      min-height:100vh;
+      padding:110px 5vw 70px;
+      position:relative;
+    }
+
+    .eyebrow{
+      display:flex;align-items:center;gap:10px;
+      margin:0 0 14px;
+      color:var(--cyan);
+      font-size:.66rem;
+      font-weight:800;
+      letter-spacing:.19em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow span{
+      width:28px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+    }
+
+    .display{
+      font-family:var(--display);
+      font-weight:400;
+      text-transform:uppercase;
+      line-height:.92;
+      letter-spacing:-.05em;
+      margin:0;
+    }
+
+    .display em{
+      font-style:normal;
+      color:transparent;
+      -webkit-text-stroke:1.4px var(--cyan);
+      text-shadow:0 0 16px rgba(72,230,255,.22);
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.7;
+      max-width:760px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:4vw;
+      align-items:center;
+    }
+
+    .hero h1{font-size:clamp(3.3rem, 7vw, 7.6rem)}
+    .hero-copy .sub{margin:22px 0 26px}
+
+    .button-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .button{
+      text-decoration:none;
+      padding:14px 18px;
+      font-size:.74rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+    }
+
+    .button.primary{
+      color:#031018;
+      background:linear-gradient(90deg, var(--cyan), #adf7ff);
+      box-shadow:0 0 28px rgba(72,230,255,.2);
+      clip-path:polygon(0 0, calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+    }
+
+    .button.secondary{
+      color:var(--text);
+      background:rgba(11,22,38,.65);
+      border:1px solid rgba(72,230,255,.18);
+    }
+
+    .orbit-box{
+      position:relative;
+      min-height:520px;
+      display:grid;
+      place-items:center;
+    }
+
+    .galaxy{
+      width:min(32vw, 470px);
+      aspect-ratio:1;
+      position:relative;
+      border-radius:50%;
+      border:1px solid rgba(72,230,255,.16);
+      animation: spin 24s linear infinite;
+    }
+
+    .galaxy::before,.galaxy::after{
+      content:"";
+      position:absolute;
+      inset:14%;
+      border:1px dashed rgba(159,99,255,.24);
+      border-radius:50%;
+    }
+    .galaxy::after{inset:29%; border-style:solid; animation: spin 12s linear infinite reverse}
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .planet{
+      position:absolute;
+      padding:9px 12px;
+      font-size:.58rem;
+      font-weight:800;
+      letter-spacing:.11em;
+      border-radius:999px;
+      background:rgba(5,13,24,.95);
+      border:1px solid currentColor;
+      box-shadow:0 0 20px currentColor;
+    }
+
+    .p1{top:6%;left:48%;color:var(--pink)}
+    .p2{right:-4%;top:45%;color:var(--cyan)}
+    .p3{left:6%;bottom:8%;color:var(--lime)}
+
+    .core{
+      position:absolute;
+      inset:36%;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(72,230,255,.28), transparent 30%),
+        linear-gradient(155deg, rgba(31,96,156,.35), rgba(9,17,30,.96));
+      border:1px solid rgba(72,230,255,.45);
+      box-shadow:inset 0 0 30px rgba(72,230,255,.13), 0 0 36px rgba(72,230,255,.13);
+    }
+
+    .core small{display:block;color:#b2c7d9;font-size:.54rem;letter-spacing:.18em}
+    .core strong{display:block;font-family:var(--display);font-size:1rem}
+
+    .glass{
+      background:linear-gradient(145deg, rgba(15,29,47,.8), rgba(8,16,29,.82));
+      border:1px solid rgba(72,230,255,.16);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+
+    .section-title{margin-bottom:30px}
+    .section-title h2{font-size:clamp(2.7rem, 5vw, 5.4rem)}
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .card{
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card h3{
+      margin:8px 0 12px;
+      font-family:var(--display);
+      font-weight:400;
+      font-size:1.7rem;
+      letter-spacing:-.02em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.93rem;
+    }
+
+    .mini{
+      color:var(--cyan);
+      font-size:.58rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .goals{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:18px;
+    }
+
+    .goal-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:66px;height:66px;
+      border:1px solid rgba(72,230,255,.25);
+      background:rgba(72,230,255,.05);
+      color:var(--cyan);
+      font-size:1.7rem;
+      margin:20px 0 16px;
+    }
+
+    .timeline{
+      margin-top:22px;
+      padding:18px 20px;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:18px;
+      align-items:center;
+    }
+
+    .timeline span,.timeline small{color:var(--muted);font-size:.62rem;letter-spacing:.14em;font-weight:800;text-transform:uppercase}
+    .timeline strong{font-family:var(--display);font-size:.9rem}
+    .track{height:4px;background:rgba(255,255,255,.07);position:relative}
+    .track::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      box-shadow:0 0 14px rgba(72,230,255,.22);
+    }
+
+    .routine-flow{
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr;
+      gap:16px;
+      align-items:stretch;
+      margin-bottom:22px;
+    }
+
+    .routine-block{padding:22px}
+    .arrow{
+      display:grid;place-items:center;
+      color:var(--cyan);
+      font-size:1.5rem;
+      opacity:.6;
+    }
+
+    .interest-section{
+      margin-top:18px;
+      padding:26px;
+      border:1px solid rgba(72,230,255,.16);
+      background:linear-gradient(180deg, rgba(7,17,31,.75), rgba(7,17,31,.88));
+      overflow:hidden;
+    }
+
+    .interest-header{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:end;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .interest-header h3{
+      margin:8px 0 0;
+      font-family:var(--display);
+      font-weight:400;
+      font-size:2rem;
+      letter-spacing:-.03em;
+    }
+
+    .interest-header p{
+      margin:0;
+      color:var(--muted);
+      max-width:680px;
+      line-height:1.65;
+    }
+
+    .carousel-shell{
+      position:relative;
+      border:1px solid rgba(72,230,255,.12);
+      background:rgba(5,12,22,.72);
+      overflow:hidden;
+    }
+
+    .carousel-track{
+      display:flex;
+      transition:transform .55s cubic-bezier(.2,.7,.1,1);
+      will-change:transform;
+    }
+
+    .slide{
+      min-width:100%;
+      padding:24px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .slide-copy .tag{
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 10px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.03);
+      color:var(--cyan);
+      font-size:.55rem;
+      font-weight:800;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    .slide-copy h4{
+      margin:0 0 14px;
+      font-family:var(--display);
+      font-weight:400;
+      font-size:clamp(2rem, 3.4vw, 4rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+      text-transform:uppercase;
+    }
+
+    .slide-copy p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.72;
+      max-width:540px;
+    }
+
+    .slide-visual{
+      position:relative;
+      min-height:360px;
+      display:grid;
+      place-items:center;
+      padding:14px;
+    }
+
+    .visual-box{
+      width:100%;
+      height:100%;
+      min-height:330px;
+      position:relative;
+      border:1px solid rgba(255,255,255,.06);
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(72,230,255,.08), transparent 26%),
+        linear-gradient(160deg, rgba(16,30,50,.96), rgba(8,15,26,.98));
+    }
+
+    .placeholder-grid{
+      position:absolute;
+      inset:16px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .placeholder-grid .slot,
+    .topic-art{
+      border:1px dashed rgba(255,255,255,.14);
+      background:rgba(255,255,255,.025);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:12px;
+      color:#cdd9e6;
+      font-size:.82rem;
+      line-height:1.45;
+    }
+
+    .slot small,
+    .topic-art small{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:.68rem;
+    }
+
+    .slot::before{
+      content:"＋";
+      display:block;
+      font-size:1.8rem;
+      color:var(--cyan);
+      margin-bottom:8px;
+    }
+
+    .anime-frame{
+      position:absolute;
+      border:1px solid rgba(72,230,255,.16);
+      background:linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow:0 0 24px rgba(72,230,255,.08);
+      overflow:hidden;
+    }
+
+    .anime-frame::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(135deg, rgba(159,99,255,.25), transparent 35%),
+        linear-gradient(320deg, rgba(255,88,197,.18), transparent 35%);
+      opacity:.75;
+    }
+
+    .anime-frame .fill{
+      position:absolute; inset:0;
+      display:grid; place-items:center;
+      color:#e8f3ff;
+      text-align:center;
+      padding:10px;
+      font-size:.78rem;
+      line-height:1.4;
+      z-index:1;
+    }
+
+    .f1{width:48%;height:42%;left:7%;top:8%;transform:rotate(-6deg)}
+    .f2{width:38%;height:28%;right:8%;top:14%;transform:rotate(7deg)}
+    .f3{width:44%;height:34%;left:14%;bottom:12%;transform:rotate(5deg)}
+    .f4{width:32%;height:26%;right:12%;bottom:16%;transform:rotate(-8deg)}
+
+    .astronomy-scene{
+      position:absolute; inset:0; overflow:hidden;
+      background:
+        radial-gradient(circle at 68% 28%, rgba(255,255,255,.75) 0 2px, transparent 4px),
+        radial-gradient(circle at 18% 20%, rgba(255,255,255,.7) 0 1px, transparent 3px),
+        radial-gradient(circle at 72% 76%, rgba(255,255,255,.7) 0 1px, transparent 3px),
+        radial-gradient(circle at 20% 78%, rgba(72,230,255,.7) 0 1px, transparent 3px),
+        radial-gradient(circle at 75% 22%, rgba(159,99,255,.26), transparent 18%),
+        radial-gradient(circle at 30% 65%, rgba(72,230,255,.22), transparent 20%),
+        linear-gradient(180deg, #091425, #060c18);
+    }
+
+    .planet-big, .planet-small, .ringed{
+      position:absolute; border-radius:50%;
+    }
+
+    .planet-big{
+      width:120px;height:120px;left:12%;top:26%;
+      background:radial-gradient(circle at 35% 35%, #e0fdff, #56cce0 35%, #1c3f5d 74%);
+      box-shadow:0 0 40px rgba(72,230,255,.16);
+    }
+
+    .ringed{
+      width:150px;height:150px;right:10%;bottom:18%;
+      background:radial-gradient(circle at 30% 30%, #fff3c7, #f8ac64 30%, #8f4c29 72%);
+      box-shadow:0 0 35px rgba(255,157,77,.18);
+    }
+
+    .ringed::before{
+      content:""; position:absolute;
+      width:190px;height:54px; left:50%; top:50%;
+      transform:translate(-50%,-50%) rotate(-18deg);
+      border:3px solid rgba(255,255,255,.42);
+      border-radius:50%;
+    }
+
+    .planet-small{
+      width:48px;height:48px;right:28%;top:16%;
+      background:radial-gradient(circle at 35% 35%, #fff, #ae6fff 32%, #33145d 80%);
+    }
+
+    .nebula{
+      position:absolute;
+      width:220px;height:220px;
+      border-radius:50%;
+      filter:blur(14px);
+      opacity:.55;
+      background:radial-gradient(circle, rgba(255,88,197,.52), transparent 58%);
+      left:32%; top:22%;
+    }
+
+    .arts-scene, .biology-scene, .physics-scene{
+      position:absolute; inset:0;
+      overflow:hidden;
+      background:linear-gradient(160deg, rgba(12,20,34,.96), rgba(8,14,24,.98));
+    }
+
+    .paint-splash{
+      position:absolute;border-radius:50%;
+      filter:blur(1px); mix-blend-mode:screen;
+    }
+    .paint-splash.s1{width:160px;height:160px;left:10%;top:18%;background:rgba(255,88,197,.35)}
+    .paint-splash.s2{width:120px;height:120px;right:14%;top:15%;background:rgba(72,230,255,.28)}
+    .paint-splash.s3{width:170px;height:170px;left:28%;bottom:14%;background:rgba(255,157,77,.3)}
+    .paint-splash.s4{width:90px;height:90px;right:20%;bottom:18%;background:rgba(191,255,99,.22)}
+    .paint-tools{
+      position:absolute; inset:14px;
+      display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    }
+    .paint-card{
+      border:1px dashed rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:16px; z-index:1;
+      font-size:.86rem;
+    }
+
+    .dna{
+      position:absolute; left:50%; top:50%;
+      width:200px; height:300px;
+      transform:translate(-50%,-50%);
+    }
+
+    .strand{
+      position:absolute; width:4px; height:100%;
+      background:linear-gradient(var(--lime), rgba(191,255,99,.05));
+      left:38%; border-radius:999px;
+      transform:rotate(13deg);
+      box-shadow:0 0 14px rgba(191,255,99,.15);
+    }
+
+    .strand.right{
+      left:auto; right:38%;
+      transform:rotate(-13deg);
+    }
+
+    .step{
+      position:absolute; left:50%;
+      width:104px; height:4px;
+      transform:translateX(-50%);
+      background:linear-gradient(90deg, var(--cyan), var(--lime));
+      box-shadow:0 0 12px rgba(72,230,255,.18);
+    }
+
+    .cell{
+      position:absolute; border-radius:50%;
+      border:1px solid rgba(72,230,255,.2);
+      background:radial-gradient(circle at 35% 35%, rgba(72,230,255,.3), rgba(72,230,255,.05));
+    }
+
+    .cell.c1{width:74px;height:74px;left:12%;top:18%}
+    .cell.c2{width:98px;height:98px;right:12%;top:22%}
+    .cell.c3{width:62px;height:62px;left:18%;bottom:18%}
+    .cell.c4{width:82px;height:82px;right:18%;bottom:14%}
+
+    .atom{
+      position:absolute; inset:0; display:grid; place-items:center;
+    }
+    .atom-core{
+      width:26px;height:26px;border-radius:50%;
+      background:var(--cyan); box-shadow:0 0 18px var(--cyan);
+      position:relative; z-index:2;
+    }
+    .orbit-line{
+      position:absolute; width:260px; height:120px;
+      border:2px solid rgba(159,99,255,.34);
+      border-radius:50%;
+      animation:spin 8s linear infinite;
+    }
+    .orbit-line.o2{transform:rotate(60deg); animation-duration:10s}
+    .orbit-line.o3{transform:rotate(120deg); animation-duration:12s}
+    .electron{
+      position:absolute; width:14px;height:14px;border-radius:50%;
+      background:var(--pink); box-shadow:0 0 12px var(--pink);
+      top:-7px; left:40px;
+    }
+
+
+    .anime-gallery-box{
+      padding:16px;
+      min-height:330px;
+      display:flex;
+      align-items:stretch;
+    }
+
+    .anime-gallery{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      grid-auto-rows:minmax(135px, 1fr);
+      gap:12px;
+    }
+
+    .anime-gallery img{
+      width:100%;
+      height:100%;
+      min-height:135px;
+      object-fit:cover;
+      border:1px solid rgba(72,230,255,.2);
+      background:#091323;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      transition:transform .25s ease, border-color .25s ease;
+    }
+
+    .anime-gallery img:hover{
+      transform:scale(1.025);
+      border-color:var(--cyan);
+    }
+
+    .anime-empty{
+      position:absolute;
+      inset:16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      text-align:center;
+      color:var(--muted);
+      border:1px dashed rgba(72,230,255,.25);
+      background:
+        radial-gradient(circle at center, rgba(72,230,255,.06), transparent 55%),
+        rgba(255,255,255,.015);
+    }
+
+    .anime-empty strong{
+      color:var(--cyan);
+      font-size:.76rem;
+      letter-spacing:.14em;
+    }
+
+    .anime-empty span{
+      font-family:monospace;
+      font-size:.76rem;
+    }
+
+    .anime-empty.hidden{
+      display:none;
+    }
+
+    .static-image-box{
+      min-height:330px;
+      display:grid;
+      place-items:center;
+      padding:18px;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(72,230,255,.07), transparent 38%),
+        linear-gradient(160deg, rgba(16,30,50,.96), rgba(8,15,26,.98));
+    }
+
+    .topic-image{
+      display:block;
+      width:100%;
+      height:100%;
+      max-height:315px;
+      object-fit:contain;
+    }
+
+    .dna-image{
+      filter:drop-shadow(0 0 22px rgba(72,230,255,.16));
+    }
+
+    .art-image{
+      filter:drop-shadow(0 0 22px rgba(255,88,197,.12));
+    }
+
+    .carousel-controls{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:14px 18px;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:rgba(3,9,16,.78);
+    }
+
+    .control-group{display:flex;gap:10px;align-items:center}
+    .nav-btn{
+      width:42px;height:42px;border-radius:999px;border:1px solid rgba(72,230,255,.18);
+      background:rgba(255,255,255,.03); color:var(--text); cursor:pointer;
+      font-size:1.1rem;
+    }
+
+    .dots{
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      border:none; cursor:pointer;
+      background:rgba(255,255,255,.18);
+    }
+    .dot.active{background:var(--cyan); box-shadow:0 0 12px var(--cyan)}
+    .counter{
+      color:var(--muted);
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.12em;
+    }
+
+    .blackhole-zone{
+      margin-top:22px;
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 60% 45%, rgba(114,66,255,.10), transparent 25%),
+        linear-gradient(180deg, rgba(7,13,25,.95), rgba(3,7,14,.98));
+      border:1px solid rgba(255,88,197,.14);
+    }
+
+    .blackhole-zone::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(circle at 75% 28%, rgba(255,255,255,.35) 0 1px, transparent 2px),
+        radial-gradient(circle at 16% 60%, rgba(255,255,255,.26) 0 1px, transparent 2px),
+        radial-gradient(circle at 44% 22%, rgba(255,88,197,.35) 0 1px, transparent 2px);
+      background-size:320px 320px;
+      opacity:.45;
+      pointer-events:none;
+    }
+
+    .blackhole-layout{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .blackhole-copy h3{
+      margin:0 0 12px;
+      font-family:var(--display);
+      font-weight:400;
+      font-size:clamp(2rem, 4vw, 4.2rem);
+      line-height:.95;
+      text-transform:uppercase;
+      letter-spacing:-.04em;
+    }
+
+    .blackhole-copy p{
+      margin:0 0 20px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:.95rem;
+      max-width:560px;
+    }
+
+    .blackhole-copy ul{
+      margin:0;
+      padding-left:18px;
+      color:#d6e1ee;
+      line-height:1.8;
+    }
+
+    .blackhole-visual{
+      position:relative;
+      min-height:460px;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+
+    .accretion{
+      position:absolute;
+      width:370px;height:370px;border-radius:50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 0 18%, rgba(0,0,0,.98) 19%, rgba(255,159,75,.82) 30%, rgba(255,88,197,.6) 40%, rgba(97,130,255,.25) 52%, transparent 68%);
+      filter:blur(.2px) saturate(125%);
+      box-shadow:
+        0 0 80px rgba(255,88,197,.12),
+        0 0 90px rgba(255,157,77,.12);
+      animation:spin 12s linear infinite;
+    }
+
+    .singularity{
+      position:absolute;
+      width:160px;height:160px;border-radius:50%;
+      background:radial-gradient(circle, #000 0 52%, #040812 75%, transparent 76%);
+      box-shadow:0 0 80px rgba(0,0,0,.95), 0 0 34px rgba(0,0,0,.7);
+      z-index:3;
+    }
+
+    .photon-ring{
+      position:absolute;
+      width:220px;height:220px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 0 26px rgba(255,255,255,.08);
+      z-index:2;
+    }
+
+    .doom-card{
+      position:absolute;
+      width:155px;
+      padding:16px 14px;
+      text-align:center;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      background:linear-gradient(145deg, rgba(32,8,20,.94), rgba(12,10,23,.9));
+      border:1px solid rgba(255,97,125,.28);
+      box-shadow:0 0 26px rgba(255,97,125,.08);
+      color:#ffdfe5;
+    }
+
+    .doom-card small{
+      display:block;
+      margin-top:6px;
+      color:#d2a6b4;
+      font-size:.64rem;
+      letter-spacing:.04em;
+      text-transform:none;
+      line-height:1.4;
+    }
+
+    .d1{left:8%;top:8%;animation:pull1 6.2s ease-in-out infinite}
+    .d2{right:10%;top:18%;animation:pull2 6.8s ease-in-out infinite}
+    .d3{left:12%;bottom:14%;animation:pull3 7.2s ease-in-out infinite}
+
+    @keyframes pull1{
+      0%,100%{transform:translate(0,0) scale(1) rotate(-8deg); opacity:1}
+      55%{transform:translate(120px,95px) scale(.72) rotate(10deg); opacity:.95}
+      75%{transform:translate(145px,115px) scale(.5) rotate(28deg); opacity:.7}
+    }
+    @keyframes pull2{
+      0%,100%{transform:translate(0,0) scale(1) rotate(6deg); opacity:1}
+      55%{transform:translate(-120px,80px) scale(.75) rotate(-18deg); opacity:.95}
+      75%{transform:translate(-150px,110px) scale(.48) rotate(-32deg); opacity:.68}
+    }
+    @keyframes pull3{
+      0%,100%{transform:translate(0,0) scale(1) rotate(4deg); opacity:1}
+      55%{transform:translate(120px,-85px) scale(.74) rotate(-14deg); opacity:.95}
+      75%{transform:translate(145px,-106px) scale(.46) rotate(-28deg); opacity:.66}
+    }
+
+    .final-panel{
+      display:grid;
+      place-items:center;
+      text-align:center;
+      position:relative;
+    }
+
+    .final-panel h2{font-size:clamp(4.5rem, 11vw, 11rem)}
+    .final-panel p{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+    }
+
+    .ring{
+      position:absolute;
+      border-radius:50%;
+      border:1px solid rgba(72,230,255,.12);
+      animation:spin 24s linear infinite;
+    }
+    .r1{width:680px;height:680px}
+    .r2{width:450px;height:450px;border-style:dashed;animation-duration:15s;animation-direction:reverse}
+    .r3{width:260px;height:260px;border-color:rgba(255,88,197,.18);animation-duration:9s}
+
+    .speaker{
+      margin-top:18px;
+      padding:14px 16px;
+      border-left:3px solid var(--cyan);
+      background:rgba(8,16,28,.66);
+      color:#d8e4ef;
+      font-size:.82rem;
+      line-height:1.65;
+    }
+
+    .speaker strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--cyan);
+      font-size:.58rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    @media (max-width: 1100px){
+      .hero,
+      .grid-2,
+      .goals,
+      .blackhole-layout{
+        grid-template-columns:1fr;
+      }
+      .goals{grid-template-columns:1fr 1fr}
+      .routine-flow{
+        grid-template-columns:1fr;
+      }
+      .arrow{display:none}
+      .slide{
+        grid-template-columns:1fr;
+      }
+      .blackhole-visual{min-height:400px}
+      .nav{display:none}
+    }
+
+    @media (max-width: 760px){
+      section{padding:92px 18px 54px}
+      .brand-copy{display:none}
+      .topbar{padding:0 14px}
+      .hero h1{font-size:clamp(3rem, 15vw, 5rem)}
+      .section-title h2{font-size:clamp(2.4rem, 12vw, 4.4rem)}
+      .goals{grid-template-columns:1fr}
+      .slide-visual{min-height:300px}
+      .anime-gallery{grid-template-columns:1fr}
+      .anime-gallery img{min-height:180px}
+
+      .visual-box{min-height:280px}
+      .carousel-controls{flex-direction:column; align-items:flex-start}
+      .blackhole-visual{min-height:360px}
+      .accretion{width:290px;height:290px}
+      .doom-card{width:120px;font-size:.62rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="stars2"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <div class="brand-mark">AM</div>
+      <div class="brand-copy">
+        <strong>ANDRÉ MICAEL</strong>
+        <small>STRATEGIC PRESENTATION</small>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#about">ABOUT</a>
+      <a href="#goals">GOALS</a>
+      <a href="#routine">ROUTINE</a>
+      <a href="#universe">INTERESTS</a>
+      <a href="#finale">FINAL</a>
+    </nav>
+
+    <a class="cta" href="#universe">MY UNIVERSE</a>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Basic 1 · Visual Presentation</p>
+          <h1 class="display">Do you know <em>where you are</em> going?</h1>
+
+          <div class="button-row">
+            <a class="button primary" href="#about">START PRESENTATION →</a>
+            <a class="button secondary" href="#universe">SEE MY INTERESTS</a>
+          </div>
+
+          <div class="speaker">
+            <strong>Speaker cue</strong>
+            Good evening. My name is André Micael. Today I will talk about who I am, my goals, my routine, and where I am going.
+          </div>
+        </div>
+
+        <div class="orbit-box">
+          <div class="galaxy">
+            <div class="planet p1">FAMILY</div>
+            <div class="planet p2">WORK</div>
+            <div class="planet p3">STUDIES</div>
+            <div class="core">
+              <div>
+                <small>MY</small>
+                <strong>PATH</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-title">
+        <p class="eyebrow"><span></span> Part 1</p>
+        <h2 class="display">Talk about <em>yourself</em></h2>
+      </div>
+
+      <div class="grid-2">
+        <article class="glass card">
+          <p class="mini">Identity</p>
+          <h3>André Micael</h3>
+          <p>
+            I am twenty-six years old. I am Brazilian, and I live in São Paulo.
+            I am introverted, creative, and focused.
+          </p>
+        </article>
+
+        <article class="glass card">
+          <p class="mini">Profession</p>
+          <h3>Data Analyst</h3>
+          <p>
+            I am a data analyst at Vivo. I work with data, reports, and systems.
+            My family is very important to me, and my priorities are my family, my work, and my studies.
+          </p>
+        </article>
+      </div>
+
+      <div class="speaker">
+        <strong>Speaker cue</strong>
+        I am twenty-six years old. I am Brazilian, and I live in São Paulo. I am introverted, creative, and focused. I am a data analyst at Vivo. My family is very important to me. My priorities are my family, my work, and my studies.
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="section-title">
+        <p class="eyebrow"><span></span> Part 2</p>
+        <h2 class="display">Describe <em>your goals</em></h2>
+      </div>
+
+      <div class="goals">
+        <article class="glass card">
+          <p class="mini">Personal Goal</p>
+          <div class="goal-badge">⌂</div>
+          <h3>Family Life</h3>
+          <p>My personal goal is to have a good life with my family.</p>
+        </article>
+
+        <article class="glass card">
+          <p class="mini">Professional Goal</p>
+          <div class="goal-badge">↗</div>
+          <h3>English & Career</h3>
+          <p>My professional goal is to improve my English and grow in my career.</p>
+        </article>
+
+        <article class="glass card">
+          <p class="mini">Five Years</p>
+          <div class="goal-badge">★</div>
+          <h3>More Knowledge</h3>
+          <p>In five years, I want to be a better data analyst and have more knowledge.</p>
+        </article>
+      </div>
+
+      <div class="glass timeline">
+        <div>
+          <span>Now</span><br><strong>2026</strong>
+        </div>
+        <div class="track"></div>
+        <div style="text-align:right">
+          <small>In five years</small><br><strong>BETTER ANALYST</strong>
+        </div>
+      </div>
+
+      <div class="speaker">
+        <strong>Speaker cue</strong>
+        My personal goal is to have a good life with my family. My professional goal is to improve my English and grow in my career. In five years, I want to be a better data analyst and have more knowledge.
+      </div>
+    </section>
+
+    <section id="routine">
+      <div class="section-title">
+        <p class="eyebrow"><span></span> Part 3</p>
+        <h2 class="display">Describe <em>your routine</em></h2>
+      </div>
+
+      <div class="routine-flow">
+        <article class="glass routine-block">
+          <p class="mini">Day</p>
+          <h3>Work</h3>
+          <p>I work from Monday to Friday with data, reports, and systems.</p>
+        </article>
+        <div class="arrow">→</div>
+        <article class="glass routine-block">
+          <p class="mini">After work</p>
+          <h3>Study</h3>
+          <p>After work, I study English and sometimes I study technology.</p>
+        </article>
+        <div class="arrow">→</div>
+        <article class="glass routine-block">
+          <p class="mini">Night & Weekend</p>
+          <h3>Rest</h3>
+          <p>At night, I like to play on my computer and rest. On weekends, I spend time with my family.</p>
+        </article>
+      </div>
+
+      <div class="speaker">
+        <strong>Speaker cue</strong>
+        My routine is simple. I work from Monday to Friday. I work with data, reports, and systems. After work, I study English and sometimes I study technology. At night, I like to play on my computer and rest. On weekends, I spend time with my family.
+      </div>
+    </section>
+
+    <section id="universe">
+      <div class="section-title">
+        <p class="eyebrow"><span></span> Visual interests</p>
+        <h2 class="display">My <em>universe</em></h2>
+        <p class="sub">
+          This is the visual part of the presentation. The carousel shows the things I like. At the end, the black hole does not absorb what I like — it absorbs what I do not like.
+        </p>
+      </div>
+
+      <div class="interest-section glass">
+        <div class="interest-header">
+          <div>
+            <p class="mini">Carousel section</p>
+            <h3>Things I Like</h3>
+          </div>
+        </div>
+
+        <div class="carousel-shell">
+          <div class="carousel-track" id="carouselTrack">
+            <article class="slide">
+              <div class="slide-copy">
+                <span class="tag">Slide 01 · Anime</span>
+                <h4>Anime</h4>
+                <p>
+                  I like anime and creative stories.
+                </p>
+              </div>
+
+              <div class="slide-visual">
+                <div class="visual-box anime-gallery-box">
+                  <div class="anime-gallery" id="animeGallery" aria-label="Anime images"></div>
+
+                  <div class="anime-empty" id="animeEmpty">
+                    <strong>ADD YOUR ANIME IMAGES</strong>
+                    <span>anime/anime1.png</span>
+                    <span>anime/anime2.png</span>
+                    <span>anime/anime3.png</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-copy">
+                <span class="tag">Slide 02 · Astronomy</span>
+                <h4>Astronomy</h4>
+                <p>
+                  I like astronomy.
+                </p>
+              </div>
+              <div class="slide-visual">
+                <div class="visual-box">
+                  <div class="astronomy-scene">
+                    <div class="nebula"></div>
+                    <div class="planet-big"></div>
+                    <div class="planet-small"></div>
+                    <div class="ringed"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-copy">
+                <span class="tag">Slide 03 · Arts</span>
+                <h4>Arts</h4>
+                <p>
+                  I like arts and visual creativity.
+                </p>
+              </div>
+
+              <div class="slide-visual">
+                <div class="visual-box static-image-box">
+                  <img
+                    class="topic-image art-image"
+                    src="assets/abstract-art.svg"
+                    alt="An abstract illustration representing arts and creativity"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-copy">
+                <span class="tag">Slide 04 · Biology</span>
+                <h4>Biology</h4>
+                <p>
+                  I like biology and learning about life.
+                </p>
+              </div>
+
+              <div class="slide-visual">
+                <div class="visual-box static-image-box">
+                  <img
+                    class="topic-image dna-image"
+                    src="assets/dna.svg"
+                    alt="A static illustration of a DNA molecule"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-copy">
+                <span class="tag">Slide 05 · Physics</span>
+                <h4>Physics</h4>
+                <p>
+                  I like physics because I like to understand how things work.
+                </p>
+              </div>
+              <div class="slide-visual">
+                <div class="visual-box">
+                  <div class="physics-scene">
+                    <div class="atom">
+                      <div class="orbit-line"><div class="electron"></div></div>
+                      <div class="orbit-line o2"><div class="electron"></div></div>
+                      <div class="orbit-line o3"><div class="electron"></div></div>
+                      <div class="atom-core"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-controls">
+            <div class="control-group">
+              <button class="nav-btn" id="prevBtn" aria-label="Previous slide">←</button>
+              <button class="nav-btn" id="nextBtn" aria-label="Next slide">→</button>
+              <span class="counter" id="slideCounter">01 / 05</span>
+            </div>
+            <div class="dots" id="dots"></div>
+          </div>
+        </div>
+
+        <div class="speaker">
+          <strong>Speaker cue</strong>
+          I like to study, play games, watch anime, and learn about astronomy, arts, biology, and physics.
+        </div>
+      </div>
+
+      <div class="blackhole-zone glass">
+        <div class="interest-header" style="margin-bottom:22px">
+          <div>
+            <p class="mini" style="color:var(--pink)">Grand finale</p>
+            <h3 style="margin:8px 0 0;font-family:var(--display);font-weight:400;font-size:2rem">What I Do Not Like</h3>
+          </div>
+        </div>
+
+        <div class="blackhole-layout">
+          <div class="blackhole-copy">
+            <h3>Black Hole of <br>what I avoid</h3>
+            <p>
+              I do not like disorganization, bureaucracy, and lack of clarity. So, in this visual scene, a black hole pulls these negative things away from my path.
+            </p>
+            <ul>
+              <li>Disorganization → removed from my path</li>
+              <li>Bureaucracy → absorbed by the black hole</li>
+              <li>Lack of clarity → disappears in the finale</li>
+            </ul>
+
+            <div class="speaker">
+              <strong>Speaker cue</strong>
+              I do not like disorganization, bureaucracy, and lack of clarity. In this visual section, the black hole absorbs these negative things and clears the way for my goals.
+            </div>
+          </div>
+
+          <div class="blackhole-visual">
+            <div class="doom-card d1">Disorganization<small>mess and confusion</small></div>
+            <div class="doom-card d2">Bureaucracy<small>slow complicated processes</small></div>
+            <div class="doom-card d3">Lack of clarity<small>no direction and no focus</small></div>
+
+            <div class="accretion"></div>
+            <div class="photon-ring"></div>
+            <div class="singularity"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="finale" class="final-panel">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+
+      <div style="position:relative;z-index:2">
+        <p class="eyebrow" style="justify-content:center"><span></span> Conclusion</p>
+        <h2 class="display">Do you know where <em>you are going?</em></h2>
+        <p>Yes, I know where I am going.</p>
+
+        <div class="speaker" style="max-width:820px;text-align:left">
+          <strong>Speaker cue</strong>
+          Every day, I study and work to achieve my goals. I study English because I want to improve my communication. I work with data because I want to grow in my career. Yes, I know where I am going. I want to improve my English, become a better data analyst, and have a good life with my family. Thank you.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const track = document.getElementById("carouselTrack");
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const dotsWrap = document.getElementById("dots");
+      const counter = document.getElementById("slideCounter");
+
+      let index = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = "dot" + (i === 0 ? " active" : "");
+        dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+        dot.addEventListener("click", () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsWrap.children);
+
+      function update(){
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+        counter.textContent = String(index + 1).padStart(2, "0") + " / " + String(slides.length).padStart(2, "0");
+      }
+
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        update();
+      }
+
+      prevBtn.addEventListener("click", () => goTo(index - 1));
+      nextBtn.addEventListener("click", () => goTo(index + 1));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") goTo(index - 1);
+        if (event.key === "ArrowRight") goTo(index + 1);
+      });
+
+      update();
+
+      const animeGallery = document.getElementById("animeGallery");
+      const animeEmpty = document.getElementById("animeEmpty");
+      const animeImageLimit = 20;
+      let loadedAnimeImages = 0;
+
+      for (let number = 1; number <= animeImageLimit; number += 1) {
+        const image = new Image();
+        image.src = `anime/anime${number}.png`;
+        image.alt = `Anime image ${number}`;
+        image.loading = "lazy";
+
+        image.addEventListener("load", () => {
+          loadedAnimeImages += 1;
+          animeGallery.appendChild(image);
+          animeEmpty.classList.add("hidden");
+        });
+
+        image.addEventListener("error", () => {
+          image.remove();
+        });
+      }
+
+    })();
+  </script>
+</body>
+</html>
